@@ -3,6 +3,9 @@
  */
 import { mountProjetos } from "./templates.js";
 import { mountCadastro } from "./form.js";
+import { initThemeControls } from "./theme.js";
+
+initThemeControls();
 
 const app = document.getElementById("app");
 if (!app) {
@@ -39,7 +42,13 @@ function normalizePath(hash) {
 function setActiveLink(path) {
   document.querySelectorAll("[data-route]").forEach(function (link) {
     const route = link.getAttribute("data-route");
-    link.classList.toggle("active", route === path);
+    const isActive = route === path;
+    link.classList.toggle("active", isActive);
+    if (isActive) {
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
+    }
   });
 }
 
@@ -62,6 +71,7 @@ async function render(path, scrollId) {
     document.title = route.title;
     setActiveLink(targetPath);
     closeMobileMenu();
+    app.focus({ preventScroll: true });
 
     if (targetPath === "/projetos") mountProjetos();
     if (targetPath === "/cadastro") mountCadastro();

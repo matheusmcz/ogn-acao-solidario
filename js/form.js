@@ -212,6 +212,9 @@ export function mountCadastro() {
   if (form.dataset.bound !== "true") {
     form.dataset.bound = "true";
     form.setAttribute("novalidate", "novalidate");
+    form.querySelectorAll("[required]").forEach(function (field) {
+      field.setAttribute("aria-required", "true");
+    });
     form.addEventListener("submit", handleSubmit);
     form.addEventListener("input", handleInput);
     form.addEventListener("blur", handleBlur, true);

@@ -7,7 +7,27 @@
       <h2>Quem Somos</h2>
       <p>A ONG Ação Solidária atua no combate à vulnerabilidade social por meio de projetos comunitários, educação e apoio emergencial a famílias necessitadas.</p>
       <figure class="media-container">
-        <img src="../images/voluntarios-acao.jpg" alt="Grupo de voluntários sorrindo enquanto organizam cestas básicas em um centro comunitário.">
+        <picture>
+          <source
+            type="image/webp"
+            srcset="images/voluntarios-acao-640.webp 640w,
+                    images/voluntarios-acao-960.webp 960w,
+                    images/voluntarios-acao-1200.webp 1200w"
+            sizes="(max-width: 600px) 100vw, (max-width: 1024px) 90vw, 1200px"
+          >
+          <img
+            src="images/voluntarios-acao-960.jpg"
+            srcset="images/voluntarios-acao-640.jpg 640w,
+                    images/voluntarios-acao-960.jpg 960w,
+                    images/voluntarios-acao-1200.jpg 1200w"
+            sizes="(max-width: 600px) 100vw, (max-width: 1024px) 90vw, 1200px"
+            alt="Grupo de voluntários sorrindo enquanto organizam cestas básicas em um centro comunitário."
+            width="1200"
+            height="720"
+            loading="lazy"
+            decoding="async"
+          >
+        </picture>
         <figcaption>Nossa equipe de voluntários em ação comunitária.</figcaption>
       </figure>
     </section>

@@ -11,23 +11,48 @@
 <body>
   <a class="skip-link" href="#app">Ir para o conteúdo</a>
 
-  <header class="header-main">
+  <header class="header-main" role="banner">
     <div class="header-container">
       <p class="logo"><a href="#/" data-link>ONG Ação Solidária</a></p>
 
-      <input type="checkbox" id="menu-checkbox" class="menu-checkbox" aria-label="Abrir menu de navegação">
+      <button
+        type="button"
+        class="theme-toggle"
+        id="theme-contrast-toggle"
+        aria-pressed="false"
+        title="Ativar ou desativar alto contraste"
+      >
+        Alto contraste
+      </button>
+
+      <input
+        type="checkbox"
+        id="menu-checkbox"
+        class="menu-checkbox"
+        aria-label="Abrir ou fechar menu de navegação"
+        aria-controls="nav-principal"
+        aria-expanded="false"
+      >
       <label for="menu-checkbox" class="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span class="sr-only">Menu</span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </label>
 
-      <nav class="nav-menu" aria-label="Principal">
+      <nav id="nav-principal" class="nav-menu" aria-label="Principal">
         <ul>
-          <li><a href="#/" data-link data-route="/">Início</a></li>
+          <li><a href="#/" data-link data-route="/" aria-current="page">Início</a></li>
           <li class="has-dropdown">
-            <a href="#/projetos" data-link data-route="/projetos">Projetos</a>
-            <ul class="dropdown-menu">
+            <a
+              href="#/projetos"
+              data-link
+              data-route="/projetos"
+              aria-haspopup="true"
+              aria-controls="submenu-projetos"
+              id="menuitem-projetos"
+            >Projetos</a>
+            <ul class="dropdown-menu" id="submenu-projetos" aria-labelledby="menuitem-projetos">
               <li><a href="#/projetos" data-link data-route="/projetos" data-scroll="doacoes">Doações</a></li>
               <li><a href="#/projetos" data-link data-route="/projetos" data-scroll="voluntariado">Voluntariado</a></li>
             </ul>
@@ -39,9 +64,9 @@
     </div>
   </header>
 
-  <main id="app" class="container-grid" aria-live="polite"></main>
+  <main id="app" class="container-grid" role="main" tabindex="-1" aria-live="polite" aria-atomic="false"></main>
 
-  <footer class="footer-main">
+  <footer class="footer-main" role="contentinfo" aria-label="Rodapé institucional">
     <div class="footer-content">
       <p>&copy; 2026 ONG Ação Solidária. Todos os direitos reservados.</p>
       <span class="badge badge-neutral">Ambiente Acessível</span>

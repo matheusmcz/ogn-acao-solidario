@@ -4,25 +4,33 @@
    1. DESIGN SYSTEM - VARIÁVEIS CUSTOMIZADAS (:root)
    ========================================================================== */
 :root {
-  /* Paleta de Cores (8+ Tons Estruturados) */
+  /* Paleta de Cores (8+ Tons Estruturados) — contraste texto ≥ 4.5:1 no tema claro */
   --color-primary-dark: #1b4332;
   --color-primary: #2d6a4f;
   --color-primary-light: #52b788;
-  --color-secondary: #d97706;
-  --color-secondary-hover: #b45309;
+  --color-secondary: #b45309;
+  --color-secondary-hover: #92400e;
   --color-neutral-100: #f8f9fa;
   --color-neutral-200: #e9ecef;
   --color-neutral-800: #212529;
   --color-neutral-900: #0f172a;
 
+  --color-surface: #f8f9fa;
+  --color-surface-card: #ffffff;
+  --color-text: #212529;
+  --color-text-muted: #495057;
+  --color-on-primary: #ffffff;
+  --color-border: #e9ecef;
+  --color-focus-ring: #b45309;
+
   /* Cores de Feedback / Status */
-  --color-success: #2e7d32;
+  --color-success: #1b5e20;
   --color-success-bg: #e8f5e9;
-  --color-danger: #d32f2f;
+  --color-danger: #b71c1c;
   --color-danger-bg: #ffebee;
-  --color-warning: #ed6c02;
+  --color-warning: #bf360c;
   --color-warning-bg: #fff3e0;
-  --color-info: #0288d1;
+  --color-info: #01579b;
   --color-info-bg: #e0f7fa;
 
   /* Escala Tipográfica (5 Níveis Hierárquicos com rem) */
@@ -47,6 +55,108 @@
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
   --transition-fast: all 0.2s ease-in-out;
   --transition-smooth: all 0.3s ease;
+  color-scheme: light;
+}
+
+/* Dark mode — preferência do sistema (prefers-color-scheme) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-contrast="high"]) {
+    --color-primary-dark: #0d2818;
+    --color-primary: #52b788;
+    --color-primary-light: #95d5b2;
+    --color-secondary: #fbbf24;
+    --color-secondary-hover: #f59e0b;
+    --color-neutral-100: #0f172a;
+    --color-neutral-200: #1e293b;
+    --color-neutral-800: #e2e8f0;
+    --color-neutral-900: #020617;
+    --color-surface: #0f172a;
+    --color-surface-card: #1e293b;
+    --color-text: #f1f5f9;
+    --color-text-muted: #cbd5e1;
+    --color-on-primary: #0f172a;
+    --color-border: #334155;
+    --color-focus-ring: #fbbf24;
+    --color-success: #86efac;
+    --color-success-bg: #14532d;
+    --color-danger: #fca5a5;
+    --color-danger-bg: #7f1d1d;
+    --color-warning: #fcd34d;
+    --color-warning-bg: #78350f;
+    --color-info: #7dd3fc;
+    --color-info-bg: #0c4a6e;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.55);
+    color-scheme: dark;
+  }
+}
+
+/* Alto contraste deliberado (classe + prefers-contrast) */
+:root[data-contrast="high"],
+html.theme-high-contrast {
+  --color-primary-dark: #000000;
+  --color-primary: #000000;
+  --color-primary-light: #ffff00;
+  --color-secondary: #ffff00;
+  --color-secondary-hover: #ffff66;
+  --color-neutral-100: #000000;
+  --color-neutral-200: #ffffff;
+  --color-neutral-800: #ffffff;
+  --color-neutral-900: #000000;
+  --color-surface: #000000;
+  --color-surface-card: #000000;
+  --color-text: #ffffff;
+  --color-text-muted: #ffffff;
+  --color-on-primary: #ffff00;
+  --color-border: #ffffff;
+  --color-focus-ring: #ffff00;
+  --color-success: #00ff00;
+  --color-success-bg: #000000;
+  --color-danger: #ff6666;
+  --color-danger-bg: #000000;
+  --color-warning: #ffff00;
+  --color-warning-bg: #000000;
+  --color-info: #00ffff;
+  --color-info-bg: #000000;
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --border-radius-sm: 0;
+  --border-radius-md: 0;
+  color-scheme: dark;
+}
+
+@media (prefers-contrast: more) {
+  :root:not([data-contrast="low"]) {
+    --color-primary-dark: #000000;
+    --color-primary: #000000;
+    --color-primary-light: #ffff00;
+    --color-secondary: #ffff00;
+    --color-secondary-hover: #ffff66;
+    --color-neutral-100: #000000;
+    --color-neutral-200: #ffffff;
+    --color-neutral-800: #ffffff;
+    --color-neutral-900: #000000;
+    --color-surface: #000000;
+    --color-surface-card: #000000;
+    --color-text: #ffffff;
+    --color-text-muted: #ffffff;
+    --color-on-primary: #ffff00;
+    --color-border: #ffffff;
+    --color-focus-ring: #ffff00;
+    --color-success: #00ff00;
+    --color-success-bg: #000000;
+    --color-danger: #ff6666;
+    --color-danger-bg: #000000;
+    --color-warning: #ffff00;
+    --color-warning-bg: #000000;
+    --color-info: #00ffff;
+    --color-info-bg: #000000;
+    --shadow-sm: none;
+    --shadow-md: none;
+    --shadow-lg: none;
+  }
 }
 
 /* ==========================================================================
@@ -66,8 +176,8 @@ body {
     sans-serif;
   font-size: var(--font-size-sm);
   line-height: 1.6;
-  color: var(--color-neutral-800);
-  background-color: var(--color-neutral-100);
+  color: var(--color-text);
+  background-color: var(--color-surface);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -77,7 +187,7 @@ h1,
 h2,
 h3,
 h4 {
-  color: var(--color-neutral-900);
+  color: var(--color-text);
   font-weight: 700;
   line-height: 1.2;
 }
@@ -191,6 +301,107 @@ img {
   outline-offset: 2px;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+#app:focus {
+  outline: none;
+}
+
+#app:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 4px;
+}
+
+.logo a:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 3px;
+  border-radius: var(--border-radius-sm);
+}
+
+.nav-menu a:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+.form-group-inline input:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+.modal-actions .btn:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+/* Alto contraste: reforço de foco (WCAG 2.4.7) */
+@media (prefers-contrast: more) {
+  .skip-link:focus,
+  .nav-menu a:focus-visible,
+  .btn:focus-visible,
+  .logo a:focus-visible,
+  .field-group input:focus,
+  .field-group textarea:focus,
+  .menu-checkbox:focus + .menu-toggle {
+    outline-width: 4px;
+    outline-color: var(--color-focus-ring);
+  }
+
+  .card-item,
+  .alert,
+  .toast,
+  .modal,
+  .form-responsive fieldset {
+    border: 2px solid var(--color-border);
+  }
+}
+
+html.theme-high-contrast .card-item,
+html.theme-high-contrast .alert,
+html.theme-high-contrast .toast,
+html.theme-high-contrast .modal,
+html.theme-high-contrast .form-responsive fieldset,
+:root[data-contrast="high"] .card-item,
+:root[data-contrast="high"] .alert,
+:root[data-contrast="high"] .toast,
+:root[data-contrast="high"] .modal,
+:root[data-contrast="high"] .form-responsive fieldset {
+  border: 2px solid var(--color-border);
+}
+
+.theme-toggle {
+  background: transparent;
+  border: 2px solid var(--color-on-primary, #fff);
+  color: var(--color-neutral-100);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  padding: 0.35rem 0.6rem;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  min-height: 44px;
+  margin-left: var(--spacing-xs);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+html.theme-high-contrast .theme-toggle,
+:root[data-contrast="high"] .theme-toggle {
+  border-color: #ffff00;
+  color: #ffff00;
+}
+
 .logo a {
   color: inherit;
   text-decoration: none;
@@ -290,6 +501,8 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
   max-width: 1400px;
   margin: 0 auto;
   padding: var(--spacing-sm);
@@ -359,9 +572,24 @@ img {
   transform: translateY(0);
 }
 
-/* Menu Hambúrguer (Mobile Toggle) */
+/* Menu Hambúrguer (Mobile Toggle) — permanece focável via teclado */
 .menu-checkbox {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  opacity: 0;
+}
+
+.menu-checkbox:focus + .menu-toggle {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 4px;
+  border-radius: var(--border-radius-sm);
 }
 
 body.menu-open {
@@ -398,9 +626,11 @@ body.menu-open {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
+    visibility: hidden;
     transition:
       max-height 0.4s ease-in-out,
-      opacity 0.3s ease;
+      opacity 0.3s ease,
+      visibility 0.3s ease;
     box-shadow: var(--shadow-md);
   }
 
@@ -415,6 +645,7 @@ body.menu-open {
     max-height: 80vh;
     overflow: auto;
     opacity: 1;
+    visibility: visible;
   }
 
   .menu-checkbox:checked ~ .menu-toggle span:nth-child(1) {
@@ -449,11 +680,11 @@ body.menu-open {
      5. COMPONENTES: CARTÕES, BOTÕES E ESTADOS INTERATIVOS
      ========================================================================== */
 .card-item {
-  background-color: white;
+  background-color: var(--color-surface-card);
   padding: var(--spacing-md);
   border-radius: var(--border-radius-md);
   box-shadow: var(--shadow-sm);
-  border: 1px solid var(--color-neutral-200);
+  border: 1px solid var(--color-border);
 }
 
 .card-project {
@@ -485,7 +716,7 @@ body.menu-open {
 
 .btn-primary {
   background-color: var(--color-primary);
-  color: white;
+  color: var(--color-on-primary);
 }
 
 .btn-primary:hover {
@@ -496,7 +727,7 @@ body.menu-open {
 
 .btn-secondary {
   background-color: var(--color-secondary);
-  color: white;
+  color: var(--color-on-primary);
 }
 
 .btn-secondary:hover {
@@ -737,7 +968,8 @@ body.menu-open {
   bottom: var(--spacing-md);
   right: var(--spacing-md);
   max-width: min(420px, calc(100vw - 2rem));
-  background-color: white;
+  background-color: var(--color-surface-card);
+  color: var(--color-text);
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--border-radius-md);
   box-shadow: var(--shadow-lg);
@@ -790,7 +1022,8 @@ body.menu-open {
 }
 
 .modal {
-  background-color: white;
+  background-color: var(--color-surface-card);
+  color: var(--color-text);
   border-radius: var(--border-radius-md);
   box-shadow: var(--shadow-lg);
   width: 100%;
