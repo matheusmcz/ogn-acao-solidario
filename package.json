@@ -1,0 +1,21 @@
+{
+  "name": "ogn-acao-solidario",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "SPA institucional ONG Ação Solidária — Experiência Prática",
+  "scripts": {
+    "dev": "vite",
+    "build": "node scripts/optimize-images.mjs && vite build",
+    "preview": "vite preview",
+    "optimize:images": "node scripts/optimize-images.mjs"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.13"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5",
+    "vite": "^6.2.0",
+    "vite-plugin-static-copy": "^2.3.0"
+  }
+}

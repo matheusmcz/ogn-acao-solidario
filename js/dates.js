@@ -1,7 +1,7 @@
 /**
- * js/dates.js — Formatação de datas via Day.js (CDN ESM).
+ * js/dates.js — Formatação de datas via Day.js (empacotado pelo Vite).
  */
-import dayjs from "https://cdn.jsdelivr.net/npm/dayjs@1.11.13/+esm";
+import dayjs from "dayjs";
 
 export function formatDateTime(iso) {
   if (!iso) return "—";
