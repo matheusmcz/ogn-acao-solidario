@@ -1,0 +1,69 @@
+<!-- html/index.html — Shell da Single Page Application -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ONG Ação Solidária</title>
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#app">Ir para o conteúdo</a>
+
+  <header class="header-main">
+    <div class="header-container">
+      <p class="logo"><a href="#/" data-link>ONG Ação Solidária</a></p>
+
+      <input type="checkbox" id="menu-checkbox" class="menu-checkbox" aria-label="Abrir menu de navegação">
+      <label for="menu-checkbox" class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="nav-menu" aria-label="Principal">
+        <ul>
+          <li><a href="#/" data-link data-route="/">Início</a></li>
+          <li class="has-dropdown">
+            <a href="#/projetos" data-link data-route="/projetos">Projetos</a>
+            <ul class="dropdown-menu">
+              <li><a href="#/projetos" data-link data-route="/projetos" data-scroll="doacoes">Doações</a></li>
+              <li><a href="#/projetos" data-link data-route="/projetos" data-scroll="voluntariado">Voluntariado</a></li>
+            </ul>
+          </li>
+          <li><a href="#/cadastro" data-link data-route="/cadastro">Como Ajudar</a></li>
+          <li><a href="#/componentes" data-link data-route="/componentes">Componentes</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app" class="container-grid" aria-live="polite"></main>
+
+  <footer class="footer-main">
+    <div class="footer-content">
+      <p>&copy; 2026 ONG Ação Solidária. Todos os direitos reservados.</p>
+      <span class="badge badge-neutral">Ambiente Acessível</span>
+    </div>
+  </footer>
+
+  <!-- Templates HTML5 reutilizáveis (não renderizam até serem clonados) -->
+  <template id="tpl-badge">
+    <span class="badge"></span>
+  </template>
+
+  <template id="tpl-card-project">
+    <article class="card-item card-project">
+      <div data-slot="body">
+        <div class="badge-group" data-slot="badges"></div>
+        <p data-slot="description"></p>
+        <div data-slot="list"></div>
+      </div>
+      <a href="#/cadastro" data-link data-slot="cta" class="btn btn-primary"></a>
+    </article>
+  </template>
+
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>
