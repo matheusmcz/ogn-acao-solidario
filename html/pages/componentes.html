@@ -1,0 +1,104 @@
+<section class="grid-span-12 card-item">
+      <h1>Componentes de Feedback</h1>
+      <p>
+        Catálogo visual dos microcomponentes de retorno ao utilizador (badges, alerts, toasts e modais),
+        padronizados na paleta da ONG Ação Solidária para reutilização por front-end e back-end.
+      </p>
+    </section>
+
+    <section id="secao-badges" class="grid-span-12 card-item showcase-section">
+      <h2>Badges (etiquetas semânticas)</h2>
+      <p>Categorização visual da informação por severidade ou contexto.</p>
+      <div class="badge-group">
+        <span class="badge badge-success">Sucesso</span>
+        <span class="badge badge-warning">Atenção</span>
+        <span class="badge badge-danger">Crítico</span>
+        <span class="badge badge-info">Informação</span>
+        <span class="badge badge-neutral">Neutro</span>
+      </div>
+    </section>
+
+    <section id="secao-alerts" class="grid-span-12 card-item showcase-section">
+      <h2>Alerts (caixas de alerta)</h2>
+      <p>Mensagens contextualizadas no fluxo da página, com reforço semântico via badge.</p>
+
+      <div class="alert alert-info" role="status">
+        <span class="badge badge-info">Info</span>
+        Campanha de arrecadação de inverno aberta. Consulte a área de Projetos para participar.
+      </div>
+
+      <div class="alert alert-warning" role="alert">
+        <span class="badge badge-warning">Atenção</span>
+        Campos obrigatórios devem ser preenchidos antes do envio do formulário de cadastro.
+      </div>
+
+      <div class="alert alert-success" role="status">
+        <span class="badge badge-success">Sucesso</span>
+        Sua inscrição de voluntariado foi registrada. Em breve entraremos em contato.
+      </div>
+
+      <div class="alert alert-danger" role="alert">
+        <span class="badge badge-danger">Erro</span>
+        Não foi possível processar a doação. Verifique os dados e tente novamente.
+      </div>
+    </section>
+
+    <section id="secao-toast" class="grid-span-12 card-item showcase-section">
+      <h2>Toasts (notificações não obstrutivas)</h2>
+      <p>
+        Feedback imediato após ações do utilizador. Na aplicação real, o toast aparece fixo no canto;
+        abaixo, exemplos empilhados para documentação visual.
+      </p>
+      <div class="toast-stack" style="position: static; max-width: 420px;">
+        <div class="toast toast-success" role="status">
+          <span class="badge badge-success">Sucesso</span>
+          <span>Cadastro enviado com sucesso! Entraremos em contato em breve.</span>
+        </div>
+        <div class="toast toast-warning" role="status">
+          <span class="badge badge-warning">Atenção</span>
+          <span>Há campos pendentes de revisão no formulário.</span>
+        </div>
+        <div class="toast toast-info" role="status">
+          <span class="badge badge-info">Info</span>
+          <span>Nova campanha disponível na página de Projetos.</span>
+        </div>
+        <div class="toast toast-danger" role="alert">
+          <span class="badge badge-danger">Erro</span>
+          <span>Falha na conexão. Tente novamente em alguns instantes.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="secao-modal" class="grid-span-12 card-item showcase-section">
+      <h2>Modal (diálogo confirmativo)</h2>
+      <p>
+        Sobreposição semântica para confirmações e avisos críticos. Demonstração estática aberta
+        para comprovação visual (pronta para ser controlada via JavaScript pelo back-end).
+      </p>
+      <div class="modal-demo-stage">
+        <div class="modal-overlay" role="presentation">
+          <div
+            class="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-titulo-demo"
+            aria-describedby="modal-desc-demo"
+          >
+            <div class="modal-header">
+              <h3 id="modal-titulo-demo">Confirmar envio do cadastro</h3>
+              <button type="button" class="modal-close" aria-label="Fechar diálogo">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-desc-demo">
+              <p>
+                Deseja confirmar o envio dos seus dados para a ONG Ação Solidária?
+                Após o envio, nossa equipe analisará o perfil e retornará o contato.
+              </p>
+            </div>
+            <div class="modal-actions">
+              <button type="button" class="btn btn-secondary">Cancelar</button>
+              <button type="button" class="btn btn-primary">Confirmar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
